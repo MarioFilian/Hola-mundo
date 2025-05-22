@@ -3,6 +3,8 @@ services:
   - name: web
     environment_slug: html
     github:
+      repo: MarioFilian/Hola-mundo
+    github:
       branch: main
       deploy_on_push: true
     static_sites:
