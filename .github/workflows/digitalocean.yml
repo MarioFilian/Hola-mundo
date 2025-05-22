@@ -2,13 +2,12 @@ name: Update App
 
 on:
  push:
-   branches: [main]
-
-permissions:
-  contents: read
+   branches: 
+    - main
 
 jobs:
  deploy-app:
+   name: Deploy
    runs-on: ubuntu-latest
    steps:
      - name: Checkout repository
@@ -17,3 +16,4 @@ jobs:
        uses: digitalocean/app_action/deploy@v2
        with:
          token: ${{ secrets.DIGITALOCEAN }}
+         app_spec_location: .do/app.yaml
