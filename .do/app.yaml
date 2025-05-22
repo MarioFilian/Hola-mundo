@@ -1,0 +1,15 @@
+name: static-site
+services:
+  - name: web
+    environment_slug: html
+    github:
+      branch: main
+      deploy_on_push: true
+    static_sites:
+      - name: web
+        github:
+          branch: main
+          deploy_on_push: true
+        source_dir: /
+        routes:
+          - path: /
