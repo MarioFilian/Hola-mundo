@@ -1,4 +1,4 @@
-name: static-site
+name: holamundo
 services:
   - name: web
     environment_slug: html
