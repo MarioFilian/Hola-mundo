@@ -1,12 +1,11 @@
 name: static-site
 services:
   - name: web
-    environment_slug: html  # ← Esto indica que es un sitio estático
+    environment_slug: html
     github:
-      repo: mariofilian/Hola-mundo  # ← Asegúrate de que este nombre esté correcto
+      repo: mariofilian/Hola-mundo  # Reemplaza con tu repo real
       branch: main
       deploy_on_push: true
     source_dir: /
     routes:
       - path: /
-
