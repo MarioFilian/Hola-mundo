@@ -3,15 +3,10 @@ services:
   - name: web
     environment_slug: html
     github:
-      repo: MarioFilian/Hola-mundo
-    github:
+      repo: mariofilian/Hola-mundo  # <--- Usa aquí tu repo real
       branch: main
       deploy_on_push: true
-    static_sites:
-      - name: web
-        github:
-          branch: main
-          deploy_on_push: true
-        source_dir: /
-        routes:
-          - path: /
+    source_dir: /
+    routes:
+      - path: /
+
