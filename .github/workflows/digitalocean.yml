@@ -5,8 +5,7 @@ on:
    branches: [main]
 
 permissions:
-  contents: read
-
+  contents: read, write
 jobs:
  deploy-app:
    runs-on: ubuntu-latest
@@ -14,6 +13,7 @@ jobs:
      - name: Checkout repository
        uses: actions/checkout@v3
      - name: Deploy the app
-       uses: digitalocean/app_action/deploy@v2
+       uses: digitalocean/app_action@v2
        with:
          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+         app_spec_location: .do/app.yaml
