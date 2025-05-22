@@ -4,11 +4,14 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   push:
-    branches-ignore:
+    branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 jobs:
   Deploy-Preview:
-    if: ${{ github.event_name == 'push' && github.ref != 'refs/heads/main' }}
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
